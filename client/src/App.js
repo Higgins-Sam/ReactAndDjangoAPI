@@ -18,6 +18,7 @@ function App(props) {
 			<hr></hr>
 			<h4>Counter</h4>
       <Counter />
+			<Counter />
 			<hr></hr>
 			<h4>Calculator</h4>
 			<Calculator />

@@ -1,0 +1,32 @@
+.counter {
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  margin: 0ch 0ch 1ch 0ch;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.plus {
+  margin: 0ch 0ch 0ch 1ch;
+}
+
+.minus {
+  margin: 0ch 1ch 0ch 0ch;
+}
+
+output {
+  display: inline-block;
+  width: 7%;
+  text-align: center;
+}
+
+.positive {
+  color: black;
+}
+
+.negative {
+  color: red;
+}

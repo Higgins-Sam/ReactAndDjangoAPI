@@ -56,11 +56,11 @@ def filter_properties(request):
 def defined_filter(property_object, filter_on):
     if filter_on == "":
         return True
-    if filter_on in property_object.get("tag"):
+    if filter_on.upper() in property_object.get("tag").upper():
         return True
-    elif filter_on in property_object.get("address"):
+    elif filter_on.upper() in property_object.get("address").upper():
         return True
-    elif filter_on in property_object.get("price"):
+    elif filter_on.upper() in property_object.get("price").upper():
         return True
     else:
         return False

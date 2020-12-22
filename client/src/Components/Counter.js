@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from '../Styles/Counter.module.css';
 
 function Counter(props) {
 	const [count, setCount] = useState(0);
@@ -17,11 +18,11 @@ function Counter(props) {
 	}
 
 	return (
-		<div>
+		<div className={styles.counter}>
 			<span>
-			<button onClick={decrement}> [-] </button>
-			<output>          {count}          </output>
-			<button onClick={increment}> [+] </button>
+			<button className={styles.minus} onClick={decrement}> [-] </button>
+			<output className={count >= 0 ? styles.positive : styles.negative}>{count}</output>
+			<button className={styles.plus} onClick={increment}> [+] </button>
 			</span>
 		</div>
 	);

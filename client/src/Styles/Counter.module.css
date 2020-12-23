@@ -5,28 +5,26 @@
   margin: 0ch 0ch 1ch 0ch;
 }
 
-button {
-  font-family: 'Courier New', Courier, monospace;
-}
-
 .plus {
+  font-family: 'Courier New', Courier, monospace;
   margin: 0ch 0ch 0ch 1ch;
 }
 
 .minus {
+  font-family: 'Courier New', Courier, monospace;
   margin: 0ch 1ch 0ch 0ch;
 }
 
-output {
+.positive {
   display: inline-block;
   width: 7%;
   text-align: center;
-}
-
-.positive {
   color: black;
 }
 
 .negative {
+  display: inline-block;
+  width: 7%;
+  text-align: center;
   color: red;
 }

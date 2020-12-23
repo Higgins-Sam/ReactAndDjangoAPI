@@ -1,29 +1,38 @@
 .propertySearch {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;
+  display: inline-block;
 }
 
 .propertySearchForms {
-  width: 25%;
+  width: fit-content;
 }
 
 .searchForm {
+  column-count: 1;
+  column-rule: black;
+  column-rule-width: 1px;
+  column-rule-style: solid;
   border-color: black;
   border-width: 2px;
   border-style: solid;
-  padding: 1% 1% 1% 1%;
+}
+
+.formCell {
+  column-width: 1;
+  margin: 1ch 1ch 1ch 1ch;
 }
 
 .searchLabel {
   display: inline-block;
   justify-content: space-between;
-  width: 35%;
+  width: 14ch
 }
 
 .searchButton {
   display: inline-block;
-  margin-left: 25%;
-  width: 50%;
+  margin: 1ch 0ch 0ch 1ch;
+  width: 10ch;
 }
 
 .results {

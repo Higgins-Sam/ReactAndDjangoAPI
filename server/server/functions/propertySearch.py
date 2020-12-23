@@ -47,7 +47,7 @@ def filter_properties(request):
 					lambda property_object: defined_filter(
 							property_object, get_filter(request)
 					),
-					list_of_properties,
+					json.loads(request.body).get("list"),
 			)
 	)
 	return JsonResponse({"filtered_list": filtered_list})
@@ -99,3 +99,7 @@ def search(request):
 			list_of_properties.append({"tag": tag, "address": address, "price": price, "link": link})
 
 	return JsonResponse({"list_of_properties": list_of_properties})
+
+def get_results(request):
+	return JsonResponse({"list_of_properties": list_of_properties})
+

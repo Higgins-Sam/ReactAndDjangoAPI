@@ -16,4 +16,5 @@ urlpatterns = [
     path('api/todo/clear', todo.clearList, name='clearList'),
     path('api/property/search', propertySearch.search, name='search'),
     path('api/property/filter', propertySearch.filter_properties, name='filter_properties'),
+    path('api/property/get', propertySearch.get_results, name='get_results'),
 ]

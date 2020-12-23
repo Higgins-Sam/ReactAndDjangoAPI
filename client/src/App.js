@@ -1,34 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom'
 import Calculator from './Components/Calculator';
 import Counter from './Components/Counter';
 import List from './Components/List';
 import PropertySearch from './Components/PropertySearch';
+import Hello from './Components/Hello';
+import styles from './Styles/App.module.css';
 
 function App(props) {
-	const [hello, setHello] = useState('');
 
-	useEffect(() => {
-		axios.get('/api/hello').then((response) => setHello(response.data));
-	}, []);
+	const path = window.location.origin
+
+	function updatePath(destination) {
+		window.location.href = path + destination
+	}
 
 	return (
 		<div>
-			<p>{hello.response_text}</p>
+			<div className={styles.menu}>
+				<button onClick={() => updatePath('/hello')}>Hello</button>
+				<button onClick={() => updatePath('/counter')}>Counter</button>
+				<button onClick={() => updatePath('/calculator')}>Calculator</button>
+				<button onClick={() => updatePath('/todo')}>To-Do List</button>
+				<button onClick={() => updatePath('/property')}>Property</button>
+			</div>
 			<hr></hr>
-			<h4>Counter</h4>
-      <Counter />
-			<Counter />
-			<hr></hr>
-			<h4>Calculator</h4>
-			<Calculator />
-			<hr></hr>
-			<h4>To-Do List</h4>
-      <List />
-      <hr></hr>
-			<h4>Rightmove Property Search</h4>
-			<PropertySearch />
-			<hr></hr>
+			<Switch>
+				<Route path='/hello' component={Hello} />
+				<Route path='/counter' component={Counter} />
+				<Route path='/calculator' component={Calculator} />
+				<Route path='/todo' component={List} />
+				<Route path='/property' component={PropertySearch} />
+			</Switch>
 		</div>
 	);
 }
